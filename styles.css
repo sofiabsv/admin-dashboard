@@ -71,10 +71,22 @@ table {
   justify-self: end;
 }
 
+.logo-name > .pfp {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
 .introduction {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 60%;
+}
+
+.introduction > .pfp {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
 .buttons {
