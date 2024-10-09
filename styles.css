@@ -1,0 +1,91 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom CSS */
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  height: 100bh;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  background-color: #e99c9c;
+  height: 100vh;
+}
+
+.header {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgb(176, 210, 240);
+}
+
+.top-header {
+  grid-row: 1;
+  
+}
+
+.bottom-header {
+  display: flex;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: rgb(168, 231, 210);
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.side-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
