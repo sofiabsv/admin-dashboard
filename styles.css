@@ -38,6 +38,26 @@ table {
   border-spacing: 0;
 }
 
+/* Form Reset */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
 /* Custom CSS */
 
 .body {
@@ -48,6 +68,8 @@ table {
   width: 100vw;
 }
 
+
+
 .sidebar {
   grid-column: 1;
   grid-row: 1 / span 3;
@@ -56,6 +78,7 @@ table {
   background-color: #75a4eb;
   color: white;
   padding-bottom: 35rem;
+  z-index: 2;
 }
 
 .header {
@@ -65,32 +88,24 @@ table {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   background-color: rgb(255, 255, 255);
-}
-
-.logo-name {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-self: end;
+  box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.8);
+  z-index: 1;
 }
 
 .logo-name > .pfp {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-.introduction {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 60%;
+  margin-right: 30px;
+  margin-left: 50px;
 }
 
 .introduction > .pfp {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   max-width: 100%;
   height: auto;
@@ -101,27 +116,36 @@ table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-self: end;
+  align-items: center;
   width: 50%;
+  margin-right: 10px;
+  margin-top: 20px;
 }
 .content {
   grid-column: 2 / span 2;
   grid-row: 2 / span 2;
   display: grid;
   height: 100%;
+  background-color: rgb(250, 244, 192);
 }
 
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr;
   background-color: rgb(250, 244, 192);
   height: 100%;
   width: 100%;
+  padding: 25px 40px;
 }
 
-.main-card3,
-.main-card5 {
-  grid-column: 1;
+.cards {
+  grid-row: 2 / span 2;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 25px;
 }
 
 .main-card1,
@@ -130,28 +154,45 @@ table {
 .main-card4,
 .main-card5,
 .main-card6 {
-  width: 70%;
+  width: 90%;
+  height: 100%;
   background-color: white;
-  border-radius: 5px;
-  padding: 40px 5px;
-}
-.side-cards {
-  grid-row: 2;
-  grid-column: 3;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin-top: px;
+  box-shadow: 8px 8px 8px -8px rgba(0, 0, 0, 0.99);
   display: grid;
-  grid-template-rows: 1fr 1fr;
 }
 
-svg {
-  height: 50px;
-  width: 50px;
-  fill: white;
+h5 {
+  font-size: 17px;
+  font-weight: 600;
+  padding-bottom: 10px;
 }
+
+.main-card1 p,
+.main-card2 p ,
+.main-card3 p,
+.main-card4 p,
+.main-card5 p,
+.main-card6 p {
+  font-size: 15px;
+  color: rgb(116, 116, 116);
+} 
 
 .top-menu svg,
 .bottom-menu svg {
   height: 30px;
   width: 30px;
+  fill: white;
+}
+
+.top-menu p:hover,
+.bottom-menu p:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: rgb(255, 255, 179);
+  cursor: pointer;
 }
 
 .dashboard {
@@ -163,6 +204,12 @@ svg {
   gap: 15px;
   padding-right: 30px;
   margin-top: 30px;
+  fill: white;
+}
+
+.dashboard svg {
+  height: 50px;
+  width: 50px;
 }
 
 .top-menu,
@@ -185,4 +232,168 @@ svg {
 .top-menu div p,
 .bottom-menu div p {
   font-weight: 600;
+}
+
+.header svg {
+  height: 30px;
+  width: 30px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.search-bar {
+  border: 1px solid #e6e2e2;
+  border-radius: 20px;
+  padding: 5px 10px;
+  height: min-content;
+  background-color: #e6e2e2;
+  font-size: 13px;
+}
+
+.logo-name {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  justify-self: end;
+  gap: 0px;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.logo-name p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.introduction {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  align-items: center;
+  width: max-content;
+  padding-bottom: 10px;
+}
+
+.greeting p {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.greeting p:first-of-type {
+  font-size: 15px;
+}
+
+button {
+  background-color: #75a4eb;
+  width: 100px;
+  height: fit-content;
+  color: white;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #4f8cee;
+  transition: 0.5s;
+  
+}
+
+.profile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.project-text,
+.announcement-text,
+.relations-text {
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+
+.top-card {
+  background-color: white;
+  width: 100%;
+  height: 90%;
+  border-radius: 10px;
+  padding: 20px 30px;
+  grid-row: 2;
+  grid-column: 3;
+  box-shadow: 8px 8px 8px -8px rgba(0, 0, 0, 0.99);
+}
+
+hr {
+  margin-bottom: 5px;
+  border: none; 
+  border-top: 2px solid rgb(194, 191, 191); /
+}
+
+.top-card h6 {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.top-card p {
+  font-size: 13px;
+  padding-bottom: 15px;
+  color: rgb(116, 116, 116);
+  width: 90%;
+}
+
+.bottom-card {
+  display: grid;
+  gap: 5px;
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.profiles {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 8px 8px 8px -8px rgba(0, 0, 0, 0.99);
+  margin-top: 5px;
+  padding-top: 20px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+
+.description {
+  color: rgb(116, 116, 116);
+}
+
+.card-container {
+  border-radius: 10px;
+  box-shadow: -8px 0px 0px 0px #95c0f1;
+}
+
+.icons svg {
+  height: 25px;
+  width: 25px;
+}
+
+.icons{
+  justify-self: end;
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.logo-name svg {
+  cursor: pointer;
 }
